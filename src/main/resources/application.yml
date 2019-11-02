@@ -1,0 +1,34 @@
+#国家信息中心
+##待上线域名 sic.gov.cn/
+##灾备 http://39.103.177.12/
+##liuli@www.sic.gov.cn
+server:
+  port: 8080
+  servlet:
+    context-path: /sic/
+mybatis:
+  type-aliases-package: com.example.entity
+  mapper-locations: classpath:mapper/*.xml
+spring:
+  datasource:
+    url: jdbc:mysql://39.103.177.12:3306/sic
+    #url: jdbc:mysql://localhost:3306/sic
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+    database: 0
+    host: 39.103.177.12
+    port: 6379
+    password:
+    jedis:
+      pool:
+        #最大空闲连接
+        max-idle: 8
+        #最大阻塞等待时间(负值表示无限制)
+        max-wait: -1
+        #最大连接数
+        max-active: 8
+        min-idle: 0
+    #连接超时时间
+    timeout: 5000
